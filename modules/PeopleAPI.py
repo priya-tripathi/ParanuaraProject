@@ -21,7 +21,7 @@ def get_people():
 
     try:
         get_all_people_data = peopleDB.get_all_people()
-        return jsonify({"Data": get_all_people_data, "status": "success"}), 200
+        return get_all_people_data
     except Exception as e:
         return jsonify({"message": str(e), "status": "failed"}), 404
 
