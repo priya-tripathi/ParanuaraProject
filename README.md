@@ -25,8 +25,8 @@ python main.py
 Our local web server is running in the port 5000 by default.
 
 The API provides these end points:(decorater has been used to provide routing links.
-- Given a company name, the API needs to return all their employees. Also there is solution to situation when a company has no employees
-- Given 2 people names, provide their information (Name, Age, Address, phone) and the list of their friends in common which have brown eyes and are still alive.
-- Given 1 people, provide a list of fruits and vegetables they like. This endpoint must respect this interface for the output: `{"username": "Ahi", "age": "30", "fruits": ["banana", "apple"], "vegetables": ["beetroot", "lettuce"]}`
+- Given a company name, the API  returns all their employees. Also there is solution to situation when a company has no employees
+- Given 2 people names, their information (Name, Age, Address, phone) and the list of their friends in common which have brown eyes and are still alive is provided
+- Given 1 people name, a list of fruits and vegetables they like is displayed. The interface for the output will seem like: `{"username": "Ahi", "age": "30", "fruits": ["banana", "apple"], "vegetables": ["beetroot", "lettuce"]}`
 
 Happy coding with Flask and MongoDB and RestAPIs!!!
