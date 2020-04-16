@@ -24,7 +24,7 @@ def insert_document_company():
 def get_companies():
     try:
         get_all_company_data = companyDB.get_all_companies()
-        return jsonify({"Data": get_all_company_data, "status": "success"}), 200
+        return get_all_company_data
     except Exception as e:
         return jsonify({"message": str(e), "status": "failed"}), 404
 
