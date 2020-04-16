@@ -35,4 +35,5 @@ The API provides these end points:(decorater has been used to provide routing li
 - Given 1 people name, a list of fruits and vegetables they like is displayed. The interface for the output will seem like: `{"username": "Ahi", "age": "30", "fruits": ["banana", "apple"], "vegetables": ["beetroot", "lettuce"]}`
 
 You can paste the urls in POSTMAN and test the application
+
 Happy coding with Flask and MongoDB and RestAPIs!!!
