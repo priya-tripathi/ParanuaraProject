@@ -3,7 +3,7 @@ Download python from https://www.python.org/downloads/
 
 Download MongoDB from https://www.mongodb.com/download-center#community
 
-Install Flask & pymongo
+Download PyCharm & on the terminal console Install Flask & pymongo after creating the project.
 
 pip install Flask
 
