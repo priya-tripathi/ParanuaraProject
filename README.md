@@ -9,9 +9,9 @@ pip install Flask
 
 pip install pymongo
 
-Before running the mongodb instance, we must create a data folder and run below command in command prompt.
+Before running the mongodb instance, we must create a data folder and run below command in command prompt.(you can locate your mongd.exe in your folder and accordingly run the command)
 
-"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="C:\mongo-data"
+"C:\Program Files\MongoDB\Server\4.0\bin\mongod.exe" --dbpath="C:\data"
 
 Here C:\data folder is used for saving mongodb files.
 
@@ -37,3 +37,5 @@ The API provides these end points:(decorater has been used to provide routing li
 You can paste the urls in POSTMAN and test the application
 
 Happy coding with Flask and MongoDB and RestAPIs!!!
+
+next Version: i would be coming with rendering all this data to an html format.
