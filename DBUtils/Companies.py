@@ -19,5 +19,4 @@ class CompaniesDAO(DBUtil.DBUtil):
         for document in documents:
             document['_id'] = str(document['_id'])
             response.append(document)
-        return json.dumps(response)
-
+        return response

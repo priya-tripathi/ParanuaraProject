@@ -1,12 +1,14 @@
 import json
 
-from flask import request, Blueprint, jsonify
+from flask import Blueprint, request, jsonify, render_template
 
 from DBUtils.Companies import CompaniesDAO
-from settings import DB_COLLECTION_NAME_COMP, db, DB_COLLECTION_NAME_PEOPLE
+from settings import DB_COLLECTION_NAME_COMP, DB_COLLECTION_NAME_PEOPLE, db
 
 companiesAPI = Blueprint('companiesAPI', __name__)
 companyDB = CompaniesDAO()
+title = "Paranuara"
+heading = "Paranuara Planet Data"
 
 
 @companiesAPI.route("/companies/add/service", methods=['POST'])
@@ -24,7 +26,9 @@ def insert_document_company():
 def get_companies():
     try:
         get_all_company_data = companyDB.get_all_companies()
-        return get_all_company_data
+        # return jsonify({"Data": get_all_company_data, "status": "success"}), 200
+        print()
+        return render_template('companies.html', a1=True, get_all_company_data=get_all_company_data, t=title, h=heading)
     except Exception as e:
         return jsonify({"message": str(e), "status": "failed"}), 404
 
@@ -49,11 +53,8 @@ def by_company_name(company_name):
             response.append(entry_employees)
         else:
             response.insert(0, "There are no employees in company " f'{company_name}')
-        return json.dumps(response)
+        print(response)
+        return render_template('companies.html', a2=company_name, get_all_company_data=response, t=title, h=heading)
+
     except Exception as e:
         return jsonify({"message": str(e), "status": "failed"}), 404
-
-
-
-
-

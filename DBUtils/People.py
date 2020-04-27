@@ -15,11 +15,12 @@ class PeopleDAO(DBUtil.DBUtil):
 
     def get_all_people(self):
         response = []
+        print("hi")
         documents = self.collection_people.find()
+        print(documents)
         for document in documents:
-            document['_id'] = str(document['_id'])
             response.append(document)
-        return json.dumps(response)
+        return response
 
     def get_info_twopeople(self, one, two):
         first_person = {"name": {"$eq": one}}
@@ -51,8 +52,8 @@ class PeopleDAO(DBUtil.DBUtil):
                     commonList.append(m)
                     break
         entry = {}
-        key = f'commonFriends of {one} and {two}'
-        entry[key] = []
+        # key = f'commonFriends of {one} and {two}'
+        entry["common"] = []
         has_died = False
         eye_color = "brown"
         print(commonList)
@@ -61,9 +62,10 @@ class PeopleDAO(DBUtil.DBUtil):
                              "eyeColor": {"$in": [eye_color, "___wrong"]}}
             res1 = list(db[DB_COLLECTION_NAME_PEOPLE].find(match_quality, {"_id": 0, "name": 1, }))
             for res in res1:
-                entry[key].append(res['name'])
+                entry["common"].append(res['name'])
         response.append(entry)
-        return json.dumps(response)
+        print(response)
+        return response
 
     def get_info_by_name(self, one):
         response = []
@@ -87,4 +89,4 @@ class PeopleDAO(DBUtil.DBUtil):
                     entry['vegetables'].append(a)
 
         response.append(entry)
-        return json.dumps(response)
+        return response
