@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+		<title>{{t}}</title>
+		</head>
+<body>
+<h1>{{h}}</h1>
+	<hr>
+{% if a2 %}
+<h3>Result of the Search : ToDO List</h3>
+
+    {% for todo in get_info_people_data %}
+
+
+            {% if todo.name %}
+            Name : {{ todo["name"] }}<br>
+            Age : {{ todo["age"] }}<br>
+            Address: {{ todo["address"] }}<br>
+            Phone: {{ todo["phone"] }}<br>
+            {% endif %}
+
+            <br>
+            {% if todo.common %}
+            Common friends of {{ a1 }} and {{ a2 }} (which have brown eyes and are alive):<ol> <li>{{ todo.common[0] }}</li><br>
+                                                        <li>{{ todo.common[1] }}</li></ol>
+            {% endif %}
+
+    {% endfor %}
+{% elif a3 %}
+    <h3>Result of the Search : List of all people living in Paranuara</h3>
+        Total Number of People: {{ get_all_people_data.__len__() }} <br>
+        <br>
+        {% for todo in get_all_people_data %}
+
+                Name : {{ todo["name"] }}<br>
+
+        {% endfor %}
+{% elif a4 %}
+    <h3>Result of the Search : Details of {{ a1 }}</h3>
+        <br>
+        {% for todo in get_info_people_data %}
+
+                Name : {{ todo["name"] }}<br>
+                Age : {{ todo["age"] }}<br>
+                Fruits : {{ todo.fruits }}<br>
+                Vegetables : {{ todo.vegetables }}<br>
+
+        {% endfor %}
+{% else %}
+		<h4>No Result Found !!</h4>
+{% endif %}
+
+</body>
+</html>
